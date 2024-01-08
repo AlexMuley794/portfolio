@@ -49,6 +49,8 @@ h2 {
     color: #5e55dd;
     margin-bottom: 20px; /* Espacio entre el título y las tarjetas */
 }
+
+
 .projects {
     display: flex;
     flex-direction: column; /* Cambiado a columna para que los elementos estén apilados verticalmente */
@@ -59,6 +61,8 @@ h2 {
 .project-container {
     width: 100%; /* Asegurarse de que el contenedor de proyectos ocupe el 100% del ancho disponible */
     display: flex;
+    justify-content: space-between; /* Distribuir las tarjetas en línea */
+    position: relative; /* Añadido para posicionar el texto "Proyectos" */
 }
 
 .project-card {
@@ -71,6 +75,14 @@ h2 {
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column; /* Asegura que los elementos dentro de la tarjeta estén en columna */
+    color: #fff;
+}
+.project-container h2 {
+    position: absolute;
+    top: -60px; /* Ajustado para posicionar el texto "Proyectos" encima de las tarjetas */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    color: #5e55dd;
 }
 
 .project-card a {
@@ -179,4 +191,52 @@ footer {
 .footer-link:hover {
     color: #00bcd4;
     /* Color de resaltado al pasar el mouse */
+}
+
+/* Estilos para pantallas de tabletas */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .profile {
+        flex-direction: row;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        flex: 0 0 100%;
+        margin-left: 0;
+    }
+
+    .footer-logos {
+        margin-right: 0;
+    }
+}
+
+/* Estilos para pantallas de móviles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        flex: 0 0 100%;
+        margin-left: 0;
+    }
+
+    .footer-logos {
+        margin-right: 0;
+    }
 }
