@@ -3,10 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #333;
-    /* Color de fondo oscuro */
     color: #fff;
-    /* Color del texto */
-
 }
 
 .container {
@@ -16,7 +13,6 @@ body {
 
 header {
     background-color: #222;
-    /* Color de fondo más oscuro para el encabezado */
     padding: 20px;
     text-align: center;
 }
@@ -25,15 +21,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Cambiado a columna para centrar verticalmente */
+    flex-direction: column;
 }
-
 
 .rounded-image {
     border-radius: 50%;
     margin-right: 20px;
     border: solid 1px rgb(138, 138, 245);
-
 }
 
 .parrafo {
@@ -47,98 +41,87 @@ h1 {
 
 h2 {
     color: #5e55dd;
-    margin-bottom: 20px; /* Espacio entre el título y las tarjetas */
+    margin-bottom: 20px;
 }
-
 
 .projects {
     display: flex;
-    flex-direction: column; /* Cambiado a columna para que los elementos estén apilados verticalmente */
-    justify-content: space-around; /* Distribuir las tarjetas uniformemente */
-    align-items: stretch; /* Alinea los elementos a la izquierda */
-    text-align: center; /* Centrar el texto dentro de los elementos */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    text-align: center;
 }
+
 .project-container {
-    width: 100%; /* Asegurarse de que el contenedor de proyectos ocupe el 100% del ancho disponible */
+    width: 100%;
     display: flex;
-    justify-content: space-between; /* Distribuir las tarjetas en línea */
-    position: relative; /* Añadido para posicionar el texto "Proyectos" */
+    justify-content: space-between;
+    position: relative;
 }
 
 .project-card {
     box-sizing: border-box;
     border: 1px solid #000;
-    flex: 0 0 50%; /* Establece el ancho deseado */
+    flex: 0 0 50%;
     font-size: 18px;
     padding: 30px;
     margin-left: 20px;
     transition: transform 0.3s ease-in-out;
     display: flex;
-    flex-direction: column; /* Asegura que los elementos dentro de la tarjeta estén en columna */
+    flex-direction: column;
     color: #fff;
 }
+
 .project-container h2 {
     position: absolute;
-    top: -60px; /* Ajustado para posicionar el texto "Proyectos" encima de las tarjetas */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Centrar horizontalmente */
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #5e55dd;
 }
 
 .project-card a {
     color: #00bcd4;
-    /* Cambia este color al que desees */
     text-decoration: none;
-    /* Elimina el subrayado por defecto */
 }
 
 .project-card a:hover {
     color: #ff6347;
-    /* Cambia este color al que desees para el hover */
     text-decoration: underline;
-    /* O cualquier otro estilo de subrayado que prefieras */
 }
-
 
 .project-card:hover {
     transform: scale(1.1);
-
 }
 
-.img-biblioteca {
-    width: 90%;
-}
-
-.img-almacen {
-    width: 90%;
+/* Nuevos estilos para las imágenes de los proyectos */
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 .social-links {
     background-color: #444;
-    /* Color de fondo más oscuro para los enlaces sociales */
     color: #5e55dd;
-
     text-align: center;
 }
 
 .social-logo {
     width: 35px;
-    /* Ajusta el tamaño según sea necesario */
     margin-right: 5px;
     height: 30px;
     padding: 30px;
-
 }
 
 #facebook-logo {
     width: 25px;
-    /* Ajusta el tamaño del logo de Facebook según sea necesario */
     margin-right: 5px;
 }
 
 #email-logo {
     width: 40px;
-    /* Ajusta el tamaño del logo de Facebook según sea necesario */
     margin-right: 5px;
 }
 
@@ -152,14 +135,12 @@ h2 {
 
 .social-links .animated-link:hover {
     color: #00bcd4;
-    /* Color de resaltado al pasar el mouse */
 }
 
 footer {
     display: flex;
     justify-content: space-around;
     background-color: #444;
-    /* Color de fondo más oscuro para el pie de página */
     color: #fff;
     text-align: center;
     position: relative;
@@ -169,14 +150,12 @@ footer {
 
 .footer-content {
     margin-bottom: 10px;
-    /* Agregar un margen inferior al contenedor del párrafo */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .footer-logos {
     display: flex;
     justify-content: center;
-    /* Centrar los logos horizontalmente */
     margin-right: 500px;
 }
 
@@ -190,7 +169,6 @@ footer {
 
 .footer-link:hover {
     color: #00bcd4;
-    /* Color de resaltado al pasar el mouse */
 }
 
 /* Estilos para pantallas de tabletas */
@@ -215,6 +193,10 @@ footer {
     .footer-logos {
         margin-right: 0;
     }
+
+    .project-card img {
+        max-width: 90%;
+    }
 }
 
 /* Estilos para pantallas de móviles */
@@ -238,5 +220,9 @@ footer {
 
     .footer-logos {
         margin-right: 0;
+    }
+
+    .project-card img {
+        max-width: 80%;
     }
 }
