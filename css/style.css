@@ -55,17 +55,18 @@ h2 {
 .project-container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Cambiado de space-between a center */
+    align-items: center; /* Asegura que los proyectos estén alineados verticalmente */
     position: relative;
 }
 
 .project-card {
     box-sizing: border-box;
     border: 1px solid #000;
-    flex: 0 0 50%;
+    flex: 0 0 45%; /* Ajusta el ancho para que los proyectos no se estiren demasiado */
     font-size: 18px;
     padding: 30px;
-    margin-left: 20px;
+    margin: 10px; /* Reduce el margen entre los proyectos */
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
