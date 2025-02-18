@@ -4,54 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Alejandro Hernandez Muley, Desarrollador Web con experiencia en HTML5, CSS3, JavaScript, Laravel, y más. Explora mis proyectos, habilidades y conectemos juntos.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tusitio.com" />
+    <title>Alejandro Hernandez Muley - Desarrollador Web | Portfolio</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alejandro Hernandez Muley - Desarrollador Web | Portfolio">
+    <meta property="og:description" content="Portfolio de Alejandro Hernandez Muley, Desarrollador Web con experiencia en HTML5, CSS3, JavaScript, Laravel, y más. Explora mis proyectos y conéctate conmigo.">
+    <meta property="og:image" content="https://tusitio.com/img/Captura de pantalla 2023-12-15 165027.png">
+    <meta property="og:url" content="https://tusitio.com">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alejandro Hernandez Muley",
+      "jobTitle": "Desarrollador Web",
+      "url": "https://tusitio.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/alejandro-hernandez-577614292",
+        "https://www.facebook.com/tu_facebook"
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
-    <title>Alejandro Hernandez Muley</title>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="profile">
-                <img src="img\Captura de pantalla 2023-12-15 165027.png" alt="Tu Foto" class="rounded-image">
+                <img src="img/Captura de pantalla 2023-12-15 165027.png" alt="Alejandro Hernandez Muley - Desarrollador Web" class="rounded-image">
                 <h1>Alejandro Hernandez Muley</h1>
-                <p class="parrafo">Desarollador Web</p>
+                <p class="parrafo">Desarrollador Web especializado en tecnologías modernas como HTML5, CSS3, JavaScript y Laravel</p>
             </div>
         </header>
 
-        <section class="social-links">
-            <!-- Logos de redes sociales como enlaces -->
-            <a href="https://www.facebook.com/tu_facebook" class="animated-link" target="_blank">
-                <img src="img/2021_Facebook_icon.svg.webp" alt="Facebook Logo" class="social-logo" id="facebook-logo">
-            </a>
+        <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#formacion">Formación</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
 
-            <a href="https://www.linkedin.com/in/alejandro-hernandez-577614292" class="animated-link" target="_blank">
-                <img src="img\LinkedIn_logo_initials.png.webp" alt="LinkedIn Logo" class="social-logo">
-            </a>
-
-            <a href="mailto:tu@email.com" class="animated-link">
-                <img src="img/Gmail-logo.png" alt="Email Logo" class="social-logo" id="email-logo">
-            </a>
-        </section>
-
-
-        <section class="about-me">
+        <section id="sobre-mi" class="about-me">
             <h2>Sobre Mí</h2>
-            <p>Soy un apasionado desarrollador web que ha realizado una transición exitosa desde el sector sanitario.
-                Después de años trabajando en la atención extrahospitalaria, decidí reinventarme y sumergirme en el
-                emocionante mundo de la programación y el desarrollo web.</p>
-            <p>Mi experiencia en el sector sanitario me ha proporcionado habilidades valiosas, como la resolución de
-                problemas, la atención al detalle y la capacidad para trabajar en entornos desafiantes. Ahora, aplico
-                estas habilidades en el desarrollo web, donde busco crear soluciones innovadoras y mejorar la
-                experiencia del usuario.</p>
-            <p>Con un enfoque proactivo y un amor por el aprendizaje continuo, estoy emocionado de enfrentar nuevos
-                desafíos y contribuir al mundo del desarrollo web con creatividad y dedicación.</p>
+            <p>Soy un apasionado desarrollador web con un enfoque en la creación de soluciones innovadoras y centradas en el usuario. Después de varios años trabajando en la atención extrahospitalaria, decidí reinventarme y sumergirme en el desarrollo web. Estoy emocionado de seguir aprendiendo y afrontar nuevos desafíos en este campo.</p>
         </section>
 
-        <section class="education">
+        <section id="formacion" class="education">
             <h2>Formación</h2>
             <p><strong>Técnico Superior en Desarrollo de Aplicaciones Web</strong></p>
             <p>MEDAC - 2022 - 2024</p>
-
             <p><strong>Curso en Coursera: Soporte de Tecnologías de la Información de Google</strong></p>
             <ul>
                 <li>Sistemas Operativos y tú: Convertirse en un usuario avanzado</li>
@@ -60,16 +69,15 @@
                 <li>Los bits y bytes de las redes informáticas</li>
                 <li>Administración de sistemas y servicios de infraestructura de TI</li>
             </ul>
-
             <p><strong>Cursos autodidactas</strong></p>
             <ul>
                 <li>JavaScript</li>
                 <li>Laravel</li>
                 <li>Bootstrap</li>
-                <!-- Agrega más cursos según sea necesario -->
             </ul>
         </section>
-        <section class="habilities">
+
+        <section id="habilidades" class="habilities">
             <h2>Habilidades</h2>
             <ul>
                 <li>HTML5</li>
@@ -79,65 +87,48 @@
                 <li>Bootstrap</li>
                 <li>Tailwind CSS</li>
                 <li>SASS</li>
-                <!-- Agrega más habilidades según sea necesario -->
             </ul>
         </section>
 
-        <section class="projects">
+        <section id="proyectos" class="projects">
+            <h2>Proyectos</h2>
             <div class="project-container">
-                <h2>Proyectos</h2>
-        
-                <a href="https://github.com/AlexMuley794/Gestion-biblioteca/tree/main/gestion-biblioteca" class="project-card animated-link" target="_blank">
-                    <img src="img/Captura de pantalla 2024-10-15 125405.png" alt="Proyecto 2" class="img-biblioteca">
-                    <p>"Proyecto de Laravel para gestionar bibliotecas. Consulta, agregar y eliminar libros "</p>
+                <a href="https://github.com/AlexMuley794/Gestion-biblioteca/tree/main/gestion-biblioteca" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
+                    <img src="img/Captura de pantalla 2024-10-15 125405.png" alt="Proyecto de Laravel para gestionar bibliotecas, permite consultar, agregar y eliminar libros" class="img-biblioteca">
+                    <p>Gestión de bibliotecas con Laravel - Consulta, agrega y elimina libros.</p>
                 </a>
-        
-                <a href="https://github.com/AlexMuley794/almacen" class="project-card animated-link" target="_blank">
-                    <img src="almacen.png" alt="Proyecto 3" class="img-almacen">
-                    <p>Proyecto de gestión de un almacén con Laravel</p>
+                <a href="https://github.com/AlexMuley794/almacen" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
+                    <img src="almacen.png" alt="Proyecto de gestión de almacenes con Laravel" class="img-almacen">
+                    <p>Gestión de almacenes con Laravel.</p>
                 </a>
-        
-                <a href="https://github.com/AlexMuley794/alien-shooter-game" class="project-card animated-link" target="_blank">
-                    <img src="img\Captura de pantalla 2025-01-27 132913.png" alt="Alien Shooter Game" class="img-alien-game">
-                    <p>Juego de marcianos (Alien Shooter Game). ¡Controla tu nave, dispara y elimina enemigos!</p>
+                <a href="https://github.com/AlexMuley794/alien-shooter-game" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
+                    <img src="img/Captura de pantalla 2025-01-27 132913.png" alt="Juego Alien Shooter Game, controla tu nave y elimina enemigos" class="img-alien-game">
+                    <p>Alien Shooter Game - Juego de acción donde controlas tu nave para eliminar enemigos.</p>
                 </a>
-        
-                <!-- Nuevo proyecto añadido -->
-                <a href="https://github.com/AlexMuley794/book-course-laravel-base-11" class="project-card animated-link" target="_blank">
-                    <img src="img\Captura de pantalla 2025-02-14 115224.png" alt="Blog con roles y permisos" class="img-blog">
+                <a href="https://github.com/AlexMuley794/book-course-laravel-base-11" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
+                    <img src="img/Captura de pantalla 2025-02-14 115224.png" alt="Sistema de publicación de blogs con Laravel, incluyendo roles y permisos" class="img-blog">
                     <p>Sistema de publicación de blogs con roles y permisos en Laravel.</p>
                 </a>
             </div>
         </section>
-        
-        
-        
+
+        <footer>
+            <div class="footer-content">
+                <p>Conéctate conmigo:</p>
+            </div>
+            <div class="footer-logos">
+                <a href="https://www.facebook.com/tu_facebook" class="footer-link" target="_blank" rel="noopener noreferrer">
+                    <img src="img/2021_Facebook_icon.svg.webp" alt="Facebook de Alejandro Hernandez Muley" class="social-logo">
+                </a>
+                <a href="https://www.linkedin.com/in/alejandro-hernandez-577614292" class="footer-link" target="_blank" rel="noopener noreferrer">
+                    <img src="img/LinkedIn_logo_initials.png.webp" alt="LinkedIn de Alejandro Hernandez Muley" class="social-logo">
+                </a>
+                <a href="mailto:tu@email.com" class="footer-link">
+                    <img src="img/Gmail-logo.png" alt="Correo electrónico de Alejandro Hernandez Muley" class="social-logo">
+                </a>
+            </div>
+        </footer>
     </div>
-
-
-    <footer>
-        <!-- Contenedor del párrafo -->
-        <div class="footer-content">
-            <p>Conéctate conmigo:</p>
-        </div>
-
-        <!-- Contenedor de los logos -->
-        <div class="footer-logos">
-            <!-- Logos del footer como enlaces -->
-            <a href="https://www.facebook.com/tu_facebook" class="footer-link" target="_blank">
-                <img src="img/2021_Facebook_icon.svg.webp" alt="Facebook Logo" class="social-logo" id="facebook-logo">
-            </a>
-
-            <a href="https://www.linkedin.com/in/alejandro-hernandez-577614292" class="footer-link" target="_blank">
-                <img src="img\LinkedIn_logo_initials.png.webp" alt="Linkedin Logo" class="social-logo">
-            </a>
-
-            <a href="mailto:tu@email.com" class="footer-link">
-                <img src="img/Gmail-logo.png" alt="Email Logo" class="social-logo" id="email-logo">
-            </a>
-        </div>
-    </footer>
-
 </body>
 
 </html>
