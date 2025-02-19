@@ -179,7 +179,10 @@ footer {
 .footer-content {
     margin-bottom: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que los márgenes y rellenos se incluyan en el ancho total */
 }
+
 
 .footer-logos {
     display: flex;
