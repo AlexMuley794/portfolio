@@ -134,35 +134,48 @@ section.visible {
 
 /* Habilidades */
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .skill {
-    margin-bottom: 15px;
-}
-
-.skill-bar {
-    height: 10px;
-    background-color: var(--secondary-color);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.skill-level {
-    height: 100%;
     background-color: var(--primary-color);
-    transition: width 1s ease-in-out;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform var(--transition-speed);
+    width: 120px;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.skill-name {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
 }
 
 /* Proyectos */
 .project-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
     gap: 20px;
     padding: 20px;
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -173,8 +186,7 @@ section.visible {
     text-decoration: none;
     color: var(--text-color);
     display: block;
-    width: 100%;
-    margin-bottom: 20px;
+    width: 300px;
 }
 
 .project-card:hover {
@@ -187,8 +199,6 @@ section.visible {
     object-fit: cover;
     border-radius: 8px 8px 0 0;
     display: block;
-    max-width: 100%;
-    background-color: var(--background-color);
 }
 
 .project-info {
@@ -338,11 +348,16 @@ footer {
     }
 
     .project-container {
-        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .project-card {
+        width: 280px;
     }
 
     .skills-container {
-        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .project-card img {
@@ -352,6 +367,15 @@ footer {
     .social-logo {
         width: 30px;
         height: 30px;
+    }
+
+    .skill {
+        padding: 6px 10px;
+        width: 100px;
+    }
+    
+    .skill-name {
+        font-size: 0.9em;
     }
 }
 
@@ -373,6 +397,11 @@ footer {
         height: 150px;
     }
     
+    .project-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
     .project-card img {
         height: 150px;
     }
@@ -380,6 +409,20 @@ footer {
     .social-logo {
         width: 30px;
         height: 30px;
+    }
+
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .skill {
+        padding: 5px 8px;
+        width: 80px;
+    }
+    
+    .skill-name {
+        font-size: 0.85em;
     }
 }
 
