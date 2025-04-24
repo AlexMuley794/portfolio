@@ -9,6 +9,13 @@
     <link rel="canonical" href="https://tusitio.com" />
     <title>Alejandro Hernandez Muley - Desarrollador Web | Portfolio</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="img/Captura de pantalla 2023-12-15 165027.png" as="image">
+    
     <!-- Open Graph -->
     <meta property="og:title" content="Alejandro Hernandez Muley - Desarrollador Web | Portfolio">
     <meta property="og:description" content="Portfolio de Alejandro Hernandez Muley, Desarrollador Web con experiencia en HTML5, CSS3, JavaScript, Laravel, y más. Explora mis proyectos y conéctate conmigo.">
@@ -34,21 +41,32 @@
 </head>
 
 <body>
+    <!-- Botón para volver arriba -->
+    <button id="back-to-top" aria-label="Volver arriba" class="back-to-top">
+        ↑
+    </button>
+
     <div class="container">
         <header>
             <div class="profile">
-                <img src="img/Captura de pantalla 2023-12-15 165027.png" alt="Alejandro Hernandez Muley - Desarrollador Web" class="rounded-image">
+                <img src="img/Captura de pantalla 2023-12-15 165027.png" 
+                     alt="Alejandro Hernandez Muley - Desarrollador Web" 
+                     class="rounded-image"
+                     loading="lazy"
+                     width="200"
+                     height="200">
                 <h1>Alejandro Hernandez Muley</h1>
                 <p class="parrafo">Desarrollador Web especializado en tecnologías modernas como HTML5, CSS3, JavaScript y Laravel</p>
             </div>
         </header>
 
-        <nav>
+        <nav aria-label="Navegación principal">
             <ul>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#formacion">Formación</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#sobre-mi" aria-label="Ir a la sección Sobre Mí">Sobre Mí</a></li>
+                <li><a href="#formacion" aria-label="Ir a la sección Formación">Formación</a></li>
+                <li><a href="#habilidades" aria-label="Ir a la sección Habilidades">Habilidades</a></li>
+                <li><a href="#proyectos" aria-label="Ir a la sección Proyectos">Proyectos</a></li>
+                <li><a href="#contacto" aria-label="Ir a la sección Contacto">Contacto</a></li>
             </ul>
         </nav>
 
@@ -79,56 +97,184 @@
 
         <section id="habilidades" class="habilities">
             <h2>Habilidades</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Laravel</li>
-                <li>Bootstrap</li>
-                <li>Tailwind CSS</li>
-                <li>SASS</li>
-            </ul>
+            <div class="skills-container">
+                <div class="skill">
+                    <span class="skill-name">HTML5</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">CSS3</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Laravel</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Bootstrap</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Tailwind CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">SASS</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="proyectos" class="projects">
             <h2>Proyectos</h2>
             <div class="project-container">
-            
-                <a href="https://github.com/AlexMuley794/almacen" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
-                    <img src="img/almacen.png" alt="Proyecto de gestión de almacenes con Laravel" class="img-almacen">
-                    <p>Gestión de almacenes con Laravel.</p>
+                <a href="https://github.com/AlexMuley794/almacen" 
+                   class="project-card animated-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Ver proyecto de gestión de almacenes">
+                    <img src="img/almacen.png" 
+                         alt="Proyecto de gestión de almacenes con Laravel" 
+                         class="img-almacen"
+                         loading="lazy"
+                         width="300"
+                         height="200">
+                    <div class="project-info">
+                        <h3>Gestión de Almacenes</h3>
+                        <p>Sistema de gestión de almacenes desarrollado con Laravel</p>
+                        <div class="tech-tags">
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://github.com/AlexMuley794/alien-shooter-game" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
-                    <img src="img/Captura de pantalla 2025-01-27 132913.png" alt="Juego Alien Shooter Game, controla tu nave y elimina enemigos" class="img-alien-game">
-                    <p>Alien Shooter Game - Juego de acción donde controlas tu nave para eliminar enemigos.</p>
+                <a href="https://github.com/AlexMuley794/alien-shooter-game" 
+                   class="project-card animated-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Ver proyecto Alien Shooter Game">
+                    <img src="img/Captura de pantalla 2025-01-27 132913.png" 
+                         alt="Juego Alien Shooter Game" 
+                         class="img-alien-game"
+                         loading="lazy"
+                         width="300"
+                         height="200">
+                    <div class="project-info">
+                        <h3>Alien Shooter Game</h3>
+                        <p>Juego de acción donde controlas tu nave para eliminar enemigos</p>
+                        <div class="tech-tags">
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://github.com/AlexMuley794/book-course-laravel-base-11" class="project-card animated-link" target="_blank" rel="noopener noreferrer">
-                    <img src="img/Captura de pantalla 2025-02-14 115224.png" alt="Sistema de publicación de blogs con Laravel, incluyendo roles y permisos" class="img-blog">
-                    <p>Sistema de publicación de blogs con roles y permisos en Laravel.</p>
+                <a href="https://github.com/AlexMuley794/book-course-laravel-base-11" 
+                   class="project-card animated-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Ver proyecto de sistema de blogs">
+                    <img src="img/Captura de pantalla 2025-02-14 115224.png" 
+                         alt="Sistema de publicación de blogs con Laravel" 
+                         class="img-blog"
+                         loading="lazy"
+                         width="300"
+                         height="200">
+                    <div class="project-info">
+                        <h3>Sistema de Blogs</h3>
+                        <p>Sistema de publicación de blogs con roles y permisos en Laravel</p>
+                        <div class="tech-tags">
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
                 </a>
-               
-                
             </div>
         </section>
-    </div> <!-- Cierre del contenedor -->
+
+        <section id="contacto" class="contact">
+            <h2>Contacto</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </div>
 
     <footer>
         <div class="footer-content">
             <p>Conéctate conmigo:</p>
         </div>
         <div class="footer-logos">
-            <a href="https://www.facebook.com/tu_facebook" class="footer-link" target="_blank" rel="noopener noreferrer">
-                <img src="img/2021_Facebook_icon.svg.webp" alt="Facebook de Alejandro Hernandez Muley" class="social-logo">
+            <a href="https://www.facebook.com/tu_facebook" 
+               class="footer-link" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Visitar mi perfil de Facebook">
+                <img src="img/2021_Facebook_icon.svg.webp" 
+                     alt="Facebook de Alejandro Hernandez Muley" 
+                     class="social-logo"
+                     loading="lazy"
+                     width="40"
+                     height="40">
             </a>
-            <a href="https://www.linkedin.com/in/alejandro-hernandez-577614292" class="footer-link" target="_blank" rel="noopener noreferrer">
-                <img src="img/LinkedIn_logo_initials.png.webp" alt="LinkedIn de Alejandro Hernandez Muley" class="social-logo">
+            <a href="https://www.linkedin.com/in/alejandro-hernandez-577614292" 
+               class="footer-link" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Visitar mi perfil de LinkedIn">
+                <img src="img/LinkedIn_logo_initials.png.webp" 
+                     alt="LinkedIn de Alejandro Hernandez Muley" 
+                     class="social-logo"
+                     loading="lazy"
+                     width="40"
+                     height="40">
             </a>
-            <a href="mailto:tu@email.com" class="footer-link">
-                <img src="img/Gmail-logo.png" alt="Correo electrónico de Alejandro Hernandez Muley" class="social-logo">
+            <a href="mailto:tu@email.com" 
+               class="footer-link"
+               aria-label="Enviar correo electrónico">
+                <img src="img/Gmail-logo.png" 
+                     alt="Correo electrónico de Alejandro Hernandez Muley" 
+                     class="social-logo"
+                     loading="lazy"
+                     width="40"
+                     height="40">
             </a>
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
