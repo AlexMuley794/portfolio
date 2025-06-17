@@ -47,10 +47,11 @@ header {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
-    margin: 0 auto;
     border: 3px solid var(--primary-color);
     max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform var(--transition-speed);
 }
 
 .rounded-image:hover {
@@ -135,12 +136,10 @@ section.visible {
 /* Habilidades */
 .skills-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     padding: 20px;
-    width: fit-content;
-    margin: 0 auto;
 }
 
 .skill {
@@ -170,11 +169,10 @@ section.visible {
 /* Proyectos */
 .project-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
-    width: fit-content;
     margin: 0 auto;
 }
 
@@ -185,8 +183,10 @@ section.visible {
     transition: transform var(--transition-speed);
     text-decoration: none;
     color: var(--text-color);
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .project-card:hover {
@@ -198,7 +198,6 @@ section.visible {
     height: 200px;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
-    display: block;
 }
 
 .project-info {
@@ -284,7 +283,6 @@ footer {
     object-fit: contain;
     display: block;
     transition: transform var(--transition-speed);
-    max-width: 100%;
 }
 
 .social-logo:hover {
@@ -323,7 +321,13 @@ footer {
     }
 }
 
-/* Media Queries */
+/* Responsive */
+@media (max-width: 1024px) {
+    .project-container {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
@@ -348,16 +352,12 @@ footer {
     }
 
     .project-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .project-card {
-        width: 280px;
+        gap: 20px;
     }
 
-    .skills-container {
-        gap: 10px;
+    .project-card {
+        width: 90%;
+        max-width: 300px;
     }
 
     .project-card img {
@@ -369,11 +369,16 @@ footer {
         height: 30px;
     }
 
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .skill {
         padding: 6px 10px;
         width: 100px;
     }
-    
+
     .skill-name {
         font-size: 0.9em;
     }
@@ -392,41 +397,21 @@ footer {
         padding: 20px;
     }
 
-    .rounded-image {
-        width: 150px;
-        height: 150px;
-    }
-    
     .project-card {
         width: 100%;
-        max-width: 300px;
-    }
-    
-    .project-card img {
-        height: 150px;
-    }
-    
-    .social-logo {
-        width: 30px;
-        height: 30px;
     }
 
-    .skills-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
     .skill {
-        padding: 5px 8px;
         width: 80px;
+        padding: 5px 8px;
     }
-    
+
     .skill-name {
         font-size: 0.85em;
     }
 }
 
-/* Asegurar que las imágenes se muestren correctamente */
+/* Imágenes */
 img {
     display: block;
     max-width: 100%;
