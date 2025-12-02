@@ -11,25 +11,17 @@
     <title>Alejandro Hernandez Muley - Desarrollador Web | Portfolio</title>
 
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <button id="back-to-top" aria-label="Volver arriba" class="back-to-top">↑</button>
 
-    <div class="container">
-        <header>
-            <div class="profile">
-                <img src="img/Captura de pantalla 2023-12-15 165027.png"
-                    alt="Alejandro Hernandez Muley - Desarrollador Web" class="rounded-image" loading="lazy" width="200"
-                    height="200">
-                <h1>Alejandro Hernandez Muley</h1>
-                <p class="parrafo">Desarrollador Web especializado en tecnologías modernas como HTML5, CSS3, JavaScript
-                    y Laravel</p>
-            </div>
-        </header>
-
-        <nav aria-label="Navegación principal">
+    <nav aria-label="Navegación principal">
+        <div class="container">
             <ul>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#formacion">Formación</a></li>
@@ -37,8 +29,23 @@
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="img/Captura de pantalla 2023-12-15 165027.png"
+                    alt="Alejandro Hernandez Muley - Desarrollador Web" class="rounded-image" loading="lazy" width="220"
+                    height="220">
+                <h1>Alejandro Hernandez Muley</h1>
+                <p class="parrafo">Desarrollador Web especializado en tecnologías modernas como HTML5, CSS3, JavaScript
+                    y Laravel</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
         <section id="sobre-mi" class="about-me">
             <h2>Sobre Mí</h2>
             <p>Soy un apasionado desarrollador web con un enfoque en la creación de soluciones innovadoras y centradas
@@ -49,34 +56,45 @@
 
         <section id="formacion" class="education">
             <h2>Formación</h2>
-            <p><strong>Técnico Superior en Desarrollo de Aplicaciones Web</strong></p>
-            <p>MEDAC - 2022 - 2024</p>
-            <p><strong>Curso en Coursera: Soporte de Tecnologías de la Información de Google</strong></p>
-            <ul>
-                <li>Sistemas Operativos y tú: Convertirse en un usuario avanzado</li>
-                <li>Aspectos básicos de la asistencia técnica</li>
-                <li>Seguridad informática: Defensa contra las artes oscuras digitales</li>
-                <li>Los bits y bytes de las redes informáticas</li>
-                <li>Administración de sistemas y servicios de infraestructura de TI</li>
-            </ul>
-            <p><strong>Cursos autodidactas</strong></p>
-            <ul>
-                <li>JavaScript</li>
-                <li>Laravel</li>
-                <li>Bootstrap</li>
-            </ul>
+            <div class="education-item">
+                <p><strong>Técnico Superior en Desarrollo de Aplicaciones Web</strong></p>
+                <p class="text-muted">MEDAC - 2022 - 2024</p>
+            </div>
+            <br>
+            <div class="education-item">
+                <p><strong>Curso en Coursera: Soporte de Tecnologías de la Información de Google</strong></p>
+                <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-muted);">
+                    <li>Sistemas Operativos y tú: Convertirse en un usuario avanzado</li>
+                    <li>Aspectos básicos de la asistencia técnica</li>
+                    <li>Seguridad informática: Defensa contra las artes oscuras digitales</li>
+                    <li>Los bits y bytes de las redes informáticas</li>
+                    <li>Administración de sistemas y servicios de infraestructura de TI</li>
+                </ul>
+            </div>
+            <br>
+            <div class="education-item">
+                <p><strong>Cursos autodidactas</strong></p>
+                <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-muted);">
+                    <li>JavaScript</li>
+                    <li>Laravel</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
         </section>
 
         <section id="habilidades" class="habilities">
             <h2>Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill"><span class="skill-name">HTML5</span></div>
-                <div class="skill"><span class="skill-name">CSS3</span></div>
-                <div class="skill"><span class="skill-name">JavaScript</span></div>
-                <div class="skill"><span class="skill-name">Laravel</span></div>
-                <div class="skill"><span class="skill-name">Bootstrap</span></div>
-                <div class="skill"><span class="skill-name">Tailwind CSS</span></div>
-                <div class="skill"><span class="skill-name">SASS</span></div>
+            <div class="skills-orbit-container">
+                <div class="skills-center">
+                    <div class="center-icon">💻</div>
+                </div>
+                <div class="skill skill-orbit-1"><span class="skill-name">HTML5</span></div>
+                <div class="skill skill-orbit-2"><span class="skill-name">CSS3</span></div>
+                <div class="skill skill-orbit-3"><span class="skill-name">JavaScript</span></div>
+                <div class="skill skill-orbit-4"><span class="skill-name">Laravel</span></div>
+                <div class="skill skill-orbit-5"><span class="skill-name">Bootstrap</span></div>
+                <div class="skill skill-orbit-6"><span class="skill-name">Tailwind CSS</span></div>
+                <div class="skill skill-orbit-7"><span class="skill-name">SASS</span></div>
             </div>
         </section>
 
@@ -84,16 +102,14 @@
             <h2>Proyectos</h2>
             <div class="project-container">
                 <!-- Proyecto 1 -->
-                <a href="https://github.com/AlexMuley794/Rentify" class="project-card animated-link" target="_blank"
+                <a href="https://github.com/AlexMuley794/Rentify" class="project-card" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="img/captura.png"
-                        alt="Rentify: aplicación web en Laravel para gestionar propiedades de alquiler con dashboard, roles de usuario, estadísticas y CRUD completo de inmuebles, inquilinos, reservas y transacciones."
-                        class="img-rentify" loading="lazy" width="300" height="200">
+                    <img src="img/captura.png" alt="Rentify" class="img-rentify" loading="lazy" width="300"
+                        height="200">
                     <div class="project-info">
-                        <h3>rentify</h3>
-                        <p>Rentify: aplicación web en Laravel para gestionar propiedades de alquiler con dashboard,
-                            roles de usuario, estadísticas y CRUD completo de inmuebles, inquilinos, reservas y
-                            transacciones.</p>
+                        <h3>Rentify</h3>
+                        <p>Aplicación web en Laravel para gestionar propiedades de alquiler con dashboard,
+                            roles de usuario, estadísticas y CRUD completo.</p>
                         <div class="tech-tags">
                             <span>Laravel</span>
                             <span>MySQL</span>
@@ -103,22 +119,20 @@
                 </a>
 
                 <!-- Proyecto 2 -->
-                <div class="project-card animated-link">
-                    <img src="img/Captura de pantalla 2025-01-27 132913.png" alt="Juego Alien Shooter Game"
+                <div class="project-card">
+                    <img src="img/Captura de pantalla 2025-01-27 132913.png" alt="Alien Shooter Game"
                         class="img-alien-game" loading="lazy" width="300" height="200">
                     <div class="project-info">
                         <h3>Alien Shooter Game</h3>
-                        <p>Juego de acción donde controlas tu nave para eliminar enemigos</p>
-                        <p style="margin: 10px 0;">
+                        <p>Juego de acción donde controlas tu nave para eliminar enemigos.</p>
+                        <div style="margin: 10px 0; display: flex; gap: 10px;">
                             <a href="https://alien-shooter-game.great-site.net/?i=1" target="_blank"
-                                rel="noopener noreferrer"
-                                style="color: var(--primary-color); font-weight: bold; text-decoration: underline;">Jugar
+                                rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Jugar
                                 Demo</a>
-                            |
+                            <span style="color: var(--text-muted);">|</span>
                             <a href="https://github.com/AlexMuley794/alien-shooter-game" target="_blank"
-                                rel="noopener noreferrer"
-                                style="color: var(--text-color); text-decoration: underline;">GitHub</a>
-                        </p>
+                                rel="noopener noreferrer" style="color: var(--text-main);">GitHub</a>
+                        </div>
                         <div class="tech-tags">
                             <span>JavaScript</span>
                             <span>HTML5</span>
@@ -128,17 +142,16 @@
                 </div>
 
                 <!-- Proyecto 3 -->
-                <div class="project-card animated-link">
-                    <img src="img/Captura de pantalla de 2025-11-28 17-26-03.png" alt="Tienda Online WordPress"
+                <div class="project-card">
+                    <img src="img/Captura de pantalla de 2025-11-28 17-26-03.png" alt="Tienda WordPress"
                         class="img-wordpress-shop" loading="lazy" width="300" height="200">
                     <div class="project-info">
                         <h3>Tienda Online WordPress</h3>
-                        <p>Tienda online completa desarrollada con WordPress y WooCommerce</p>
-                        <p style="margin: 10px 0;">
+                        <p>Tienda online completa desarrollada con WordPress y WooCommerce.</p>
+                        <div style="margin: 10px 0;">
                             <a href="https://demo-ecommerce.gt.tc" target="_blank" rel="noopener noreferrer"
-                                style="color: var(--primary-color); font-weight: bold; text-decoration: underline;">Ver
-                                Tienda</a>
-                        </p>
+                                style="color: var(--primary); font-weight: 600;">Ver Tienda</a>
+                        </div>
                         <div class="tech-tags">
                             <span>WordPress</span>
                             <span>WooCommerce</span>
@@ -146,7 +159,55 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Proyecto 4 -->
+                <div class="project-card">
+                    <img src="img/Captura de pantalla de 2025-12-02 10-00-31.png"
+                        alt="Web Corporativa Tienda Informática" class="img-corporate-web" loading="lazy" width="300"
+                        height="200">
+                    <div class="project-info">
+                        <h3>Web Corporativa - Tienda Informática</h3>
+                        <p>Sitio web corporativo moderno para tienda de informática con diseño responsive y profesional.
+                        </p>
+                        <div style="margin: 10px 0;">
+                            <a href="https://demo-cliente.fwh.is/" target="_blank" rel="noopener noreferrer"
+                                style="color: var(--primary); font-weight: 600;">Ver Demo</a>
+                        </div>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="contact-form" action="https://formsubmit.co/hernandezmuley@gmail.com" method="POST"
+                class="contact-form">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portfolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                <div id="form-message" style="margin-top: 1rem; text-align: center; display: none;"></div>
+            </form>
         </section>
     </div>
 
@@ -155,7 +216,7 @@
             <p>Conéctate conmigo:</p>
         </div>
         <div class="footer-logos">
-            <a href="https://www.facebook.com/tu_facebook" class="footer-link" target="_blank"
+            <a href="https://www.facebook.com/profile.php?id=61581946733632" class="footer-link" target="_blank"
                 rel="noopener noreferrer">
                 <img src="img/2021_Facebook_icon.svg.webp" alt="Facebook" class="social-logo" width="40" height="40">
             </a>

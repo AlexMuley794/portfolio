@@ -1,114 +1,144 @@
-// Variables globales
-const sections = document.querySelectorAll('section');
-const backToTopButton = document.getElementById('back-to-top');
-const contactForm = document.getElementById('contact-form');
+// Main JavaScript for Portfolio
 
-// Función para mostrar/ocultar el botón "Volver arriba"
-function toggleBackToTop() {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-}
-
-// Función para animar las secciones al hacer scroll
-function animateSections() {
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (sectionTop < windowHeight * 0.75) {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }
-    });
-}
-
-// Función para manejar el envío del formulario
-function handleFormSubmit(event) {
-    event.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Aquí puedes añadir la lógica para enviar el formulario
-    // Por ejemplo, usando fetch para enviar los datos a un servidor
-    
-    // Mensaje de éxito temporal
-    const submitButton = contactForm.querySelector('.submit-btn');
-    const originalText = submitButton.textContent;
-    
-    submitButton.textContent = 'Mensaje enviado!';
-    submitButton.style.backgroundColor = '#4CAF50';
-    
-    setTimeout(() => {
-        submitButton.textContent = originalText;
-        submitButton.style.backgroundColor = '';
-        contactForm.reset();
-    }, 3000);
-}
-
-// Función para inicializar el modo oscuro/claro
-function initThemeToggle() {
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const root = document.documentElement;
-    
-    function setTheme(e) {
-        if (e.matches) {
-            root.style.setProperty('--background-color', '#333');
-            root.style.setProperty('--card-color', '#444');
-            root.style.setProperty('--text-color', '#fff');
-        } else {
-            root.style.setProperty('--background-color', '#f5f5f5');
-            root.style.setProperty('--card-color', '#fff');
-            root.style.setProperty('--text-color', '#333');
-        }
-    }
-    
-    setTheme(prefersDarkScheme);
-    prefersDarkScheme.addListener(setTheme);
-}
-
-// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar funcionalidades
-    initThemeToggle();
-    
-    // Añadir event listeners
-    window.addEventListener('scroll', () => {
-        toggleBackToTop();
-        animateSections();
+    // DOM Elements
+    const sections = document.querySelectorAll('section');
+    const backToTopButton = document.getElementById('back-to-top');
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Intersection Observer for Section Animations
+    const observerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px'
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: Stop observing once visible if you want it to animate only once
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
     });
-    
+
+    // Back to Top Button Logic
+    const toggleBackToTop = () => {
+        if (window.scrollY > 500) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    };
+
+    window.addEventListener('scroll', toggleBackToTop);
+
     backToTopButton.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleFormSubmit);
-    }
-    
-    // Animar secciones visibles al cargar la página
-    animateSections();
-});
 
-// Función para manejar la navegación suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
+    // Smooth Scrolling for Navigation Links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                const navHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navHeight - 20;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-}); 
+
+    // Contact Form AJAX Submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitButton = contactForm.querySelector('.submit-btn');
+            const formMessage = document.getElementById('form-message');
+            const originalText = submitButton.textContent;
+
+            // Show sending state
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.7';
+            formMessage.style.display = 'none';
+
+            try {
+                const formData = new FormData(contactForm);
+
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                // Success
+                submitButton.textContent = '¡Mensaje Enviado!';
+                submitButton.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+
+                formMessage.textContent = '✓ Tu mensaje ha sido enviado correctamente. Te responderé pronto.';
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#10b981';
+                formMessage.style.fontWeight = '600';
+                formMessage.style.fontSize = '1.1rem';
+
+                // Reset form
+                contactForm.reset();
+
+                // Reset button after delay
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = '1';
+                    submitButton.style.background = '';
+                    formMessage.style.display = 'none';
+                }, 5000);
+            } catch (error) {
+                // Error
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.style.opacity = '1';
+
+                formMessage.textContent = '✗ Hubo un error. Por favor, intenta de nuevo.';
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#ef4444';
+                formMessage.style.fontWeight = '600';
+
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    }
+
+    // Add parallax effect to hero image
+    const heroImage = document.querySelector('.rounded-image');
+    if (heroImage) {
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const x = (window.innerWidth - clientX) / 50;
+            const y = (window.innerHeight - clientY) / 50;
+
+            heroImage.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+        });
+    }
+});
